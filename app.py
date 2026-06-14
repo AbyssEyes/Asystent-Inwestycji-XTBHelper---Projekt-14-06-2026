@@ -104,7 +104,74 @@ class FinancialEngine:
             "biotech": ("IBB", "Biotech", "IBB.DE", "Biotech", [])
         }
 
-        self.ai_profiles = {k: f"Analiza fundamentalna instrumentu {v[1]} ({v[0]})" for k, v in self.market_map.items()}
+        self.ai_profiles = {
+            # TECH
+            "NVDA": "Lider GPU i AI, dostarczający kluczową infrastrukturę dla centrów danych i obliczeń AI.",
+            "AAPL": "Globalny gigant elektroniki użytkowej (iPhone, Mac) i lider ekosystemu usług cyfrowych.",
+            "MSFT": "Dominator oprogramowania biurowego, systemów operacyjnych oraz chmury obliczeniowej Azure.",
+            "GOOGL": "Właściciel wyszukiwarki Google, platformy YouTube oraz lider w dziedzinie reklamy cyfrowej i AI.",
+            "META": "Gigant social mediów (Facebook, Instagram, WhatsApp) oraz pionier technologii Metaverse i AI.",
+            "TSLA": "Innowator samochodów elektrycznych (EV), technologii autonomicznej jazdy i rozwiązań magazynowania energii.",
+            "AMZN": "Lider światowego e-commerce oraz największy na świecie dostawca usług w chmurze (AWS).",
+            "AMD": "Kluczowy producent procesorów i kart graficznych, główny konkurent w branży półprzewodników.",
+            "INTC": "Tradycyjny gigant produkcji procesorów PC i serwerów, transformujący się w stronę technologii AI.",
+            "ADBE": "Lider oprogramowania kreatywnego (Photoshop, Acrobat) oraz rozwiązań chmurowych dla biznesu.",
+            "CRM": "Największa na świecie platforma CRM (Customer Relationship Management) oparta na chmurze.",
+            "CSCO": "Globalny lider w dziedzinie sprzętu sieciowego, infrastruktury internetowej i cyberbezpieczeństwa.",
+            "AVGO": "Producent zaawansowanych układów scalonych i oprogramowania dla infrastruktury sieciowej.",
+            "QCOM": "Pionier technologii komunikacji bezprzewodowej, w tym standardów 5G oraz procesorów mobilnych.",
+            "IBM": "Klasyk sektora IT, skoncentrowany obecnie na chmurze hybrydowej, AI oraz komputerach kwantowych.",
+            "ORCL": "Gigant baz danych i oprogramowania dla przedsiębiorstw oraz rozwiązań chmurowych (Cloud ERP).",
+            "NFLX": "Największa platforma streamingowa na świecie, rewolucjonizująca sposób produkcji i konsumpcji treści wideo.",
+
+            # FINANCE
+            "JPM": "Największy bank w USA, oferujący pełen zakres usług finansowych, inwestycyjnych i bankowości komercyjnej.",
+            "BAC": "Drugi co do wielkości bank komercyjny w USA, kluczowy podmiot w systemie bankowości detalicznej.",
+            "V": "Globalny lider płatności elektronicznych, obsługujący infrastrukturę transakcji kartowych.",
+            "MA": "Międzynarodowy operator systemu płatności, przetwarzający miliony transakcji dziennie.",
+            "GS": "Wiodący bank inwestycyjny, specjalizujący się w zarządzaniu aktywami i doradztwie kapitałowym.",
+            "C": "Globalna instytucja finansowa świadcząca usługi bankowości korporacyjnej i detalicznej.",
+            "PYPL": "Pionier płatności cyfrowych i transferów online, posiadający szerokie portfolio usług fintech.",
+            "AXP": "Dostawca kart płatniczych i usług finansowych dla klientów z segmentu premium i korporacyjnego.",
+            "WFC": "Jeden z największych banków w USA, z silną pozycją w kredytach hipotecznych i bankowości detalicznej.",
+
+            # CONSUMER & PHARMA
+            "KO": "Największy producent napojów bezalkoholowych, słynący z potężnych dywidend i globalnej marki.",
+            "PEP": "Globalny gigant branży spożywczej (napoje i przekąski), posiadający portfel silnych marek.",
+            "MCD": "Największa na świecie sieć restauracji fast-food, działająca w modelu franczyzowym na masową skalę.",
+            "JNJ": "Zdywersyfikowany koncern farmaceutyczny i medyczny, lider badań nad zdrowiem publicznym.",
+            "PFE": "Globalny koncern farmaceutyczny, kluczowy gracz w badaniach nad nowymi terapiami i szczepionkami.",
+            "MRNA": "Lider innowacyjnej biotechnologii opartej na technologii mRNA.",
+            "PG": "Gigant dóbr konsumpcyjnych (kosmetyki, higiena, detergenty), jedna z najbardziej stabilnych spółek.",
+            "DIS": "Ikona światowej rozrywki: studio filmowe, parki rozrywki oraz platformy streamingowe.",
+            "SBUX": "Największa sieć kawiarni na świecie, lider rynku napojów kawowych.",
+
+            # POLSKA (GPW)
+            "CDR.WA": "Największe polskie studio gier wideo, znane z globalnych hitów AAA.",
+            "PKN.WA": "Koncern multienergetyczny, lider w branży paliwowej i energetycznej w regionie.",
+            "PKO.WA": "Największy bank detaliczny w Polsce, fundament krajowego sektora finansowego.",
+            "PZU.WA": "Lider rynku ubezpieczeniowego w Polsce z rozbudowanym portfelem inwestycyjnym.",
+            "ALE.WA": "Największa platforma e-commerce w Polsce, kluczowy gracz handlu cyfrowego.",
+            "PEO.WA": "Jeden z największych banków komercyjnych w Polsce, kluczowa część sektora bankowego.",
+            "KGH.WA": "Globalny producent miedzi i srebra, kluczowy podmiot dla polskiego eksportu.",
+            "LPP.WA": "Największa polska firma odzieżowa, zarządzająca markami takimi jak Reserved.",
+            "PGE.WA": "Największy wytwórca energii elektrycznej w Polsce, obecnie w fazie transformacji energetycznej.",
+            "SPL.WA": "Bank świadczący pełen zakres usług finansowych, jeden z liderów rynku w Polsce.",
+
+            # ETFS
+            "SPY": "Fundusz ETF odzwierciedlający wyniki indeksu S&P 500.",
+            "QQQ": "Fundusz ETF inwestujący w 100 największych spółek niefinansowych z Nasdaq.",
+            "GLD": "Instrument dający ekspozycję na cenę fizycznego złota.",
+            "XLE": "Fundusz skupiony na sektorze energetycznym (ropa, gaz, infrastruktura).",
+            "XLV": "Ekspozycja na sektor opieki zdrowotnej (farmacja, urządzenia medyczne).",
+            "VNQ": "Fundusz inwestujący w fundusze typu REIT, dający dostęp do rynku nieruchomości.",
+            "XLU": "Sektor użyteczności publicznej (elektrownie, media komunalne).",
+            "TLT": "ETF na amerykańskie obligacje skarbowe o długim terminie zapadalności.",
+            "VWO": "Ekspozycja na rynki wschodzące (Emerging Markets).",
+            "HACK": "Specjalistyczny ETF skupiony na spółkach z branży cyberbezpieczeństwa.",
+            "ICLN": "Fundusz skupiony na spółkach z sektora czystej energii.",
+            "IBB": "ETF inwestujący w innowacyjne spółki z sektora biotechnologii."
+        }
 
     def infer_currency(self, ticker: str) -> str:
         ticker_upper = ticker.upper()
