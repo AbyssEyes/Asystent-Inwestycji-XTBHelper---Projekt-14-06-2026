@@ -21,11 +21,8 @@ Aplikacja Streamlit służy do analizy instrumentów giełdowych (akcje i ETF), 
 
 ## Architektura kodu (`app.py`)
 
-### 1. Importy i stałe
+### 1. Importy
 - Biblioteki: `streamlit`, `yfinance`, `pandas`, `numpy`, `matplotlib`, `seaborn`.
-- Stałe progowe:
-  - `EXCELLENT_RETURN_THRESHOLD_PCT`
-  - `NEUTRAL_RETURN_THRESHOLD_PCT`
 
 ### 2. Klasa `Asset`
 Model pojedynczego instrumentu:
