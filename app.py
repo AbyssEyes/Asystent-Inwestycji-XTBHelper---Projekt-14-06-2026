@@ -105,63 +105,71 @@ class FinancialEngine:
         }
 
         self.ai_profiles = {
-            # --- TECH ---
-            "NVDA": "Lider GPU i AI, dostarczający kluczową infrastrukturę dla centrów danych.",
-            "AAPL": "Globalny gigant elektroniki użytkowej (iPhone, Mac) i lider usług cyfrowych.",
+            # TECH USA & DE
+            "NVDA": "Lider GPU i AI, dostarczający kluczową infrastrukturę dla centrów danych i obliczeń AI.",
+            "NVD.DE": "Europejska wersja notowań NVIDIA (Xetra). Lider GPU i AI, fundament nowoczesnych centrów danych.",
+            "AAPL": "Globalny gigant elektroniki użytkowej (iPhone, Mac) i lider ekosystemu usług cyfrowych.",
+            "APC.DE": "Europejska wersja notowań Apple (Xetra). Gigant elektroniki użytkowej i usług cyfrowych.",
             "MSFT": "Dominator oprogramowania, systemów operacyjnych oraz chmury obliczeniowej Azure.",
-            "GOOGL": "Właściciel wyszukiwarki Google, platformy YouTube oraz lider reklamy cyfrowej.",
-            "META": "Gigant social mediów (Facebook, Instagram) oraz pionier technologii Metaverse.",
-            "TSLA": "Innowator samochodów elektrycznych, technologii autonomicznej i magazynowania energii.",
-            "AMZN": "Lider e-commerce oraz największy na świecie dostawca usług chmurowych (AWS).",
-            "AMD": "Producent procesorów i kart graficznych, główny konkurent w branży chipów.",
-            "INTC": "Tradycyjny gigant produkcji procesorów PC, transformujący się w stronę nowoczesnych chipów AI.",
-            "ADBE": "Lider oprogramowania kreatywnego (Photoshop, Acrobat) oraz rozwiązań chmurowych.",
-            "CRM": "Największa na świecie platforma CRM do zarządzania relacjami z klientami w chmurze.",
-            "CSCO": "Globalny lider w dziedzinie sprzętu sieciowego i infrastruktury internetowej.",
-            "AVGO": "Producent zaawansowanych układów scalonych dla infrastruktury sieciowej i centrów danych.",
-            "QCOM": "Pionier technologii komunikacji bezprzewodowej, w tym standardów 5G i procesorów mobilnych.",
-            "IBM": "Klasyk sektora IT, skoncentrowany na chmurze hybrydowej i komputerach kwantowych.",
-            "ORCL": "Gigant baz danych, oprogramowania dla przedsiębiorstw i rozwiązań Cloud ERP.",
-            "NFLX": "Największa platforma streamingowa, rewolucjonizująca rynek produkcji treści wideo.",
+            "MSF.DE": "Europejska wersja notowań Microsoft (Xetra). Lider oprogramowania biznesowego i usług cloud.",
+            "AMZN": "Lider światowego e-commerce oraz największy na świecie dostawca usług chmurowych (AWS).",
+            "AMZ.DE": "Europejska wersja notowań Amazon (Xetra). Lider e-commerce i usług w chmurze.",
+            "META": "Gigant social mediów (Facebook, Instagram) oraz pionier technologii Metaverse i AI.",
+            "FB2A.DE": "Europejska wersja notowań Meta Platforms (Xetra). Gigant social mediów i reklamy cyfrowej.",
+            "GOOGL": "Właściciel wyszukiwarki Google, platformy YouTube oraz lider reklamy cyfrowej i AI.",
+            "ABEA.DE": "Europejska wersja notowań Alphabet (Xetra). Dominator wyszukiwarek i reklamy online.",
+            "TSLA": "Innowator samochodów elektrycznych (EV), autonomicznej jazdy i magazynowania energii.",
+            "TL0.DE": "Europejska wersja notowań Tesla (Xetra). Pionier elektromobilności i energii odnawialnej.",
+            "NFLX": "Największa platforma streamingowa, rewolucjonizująca produkcję treści wideo.",
+            "NFC.DE": "Europejska wersja notowań Netflix (Xetra). Globalny lider usług streamingowych.",
+            "AMD": "Kluczowy producent procesorów i kart graficznych, główny konkurent w branży chipów.",
+            "AMD.DE": "Europejska wersja notowań AMD (Xetra). Producent zaawansowanych układów scalonych.",
+            "INTC": "Tradycyjny gigant produkcji procesorów PC, transformujący się w stronę technologii AI.",
+            "INL.DE": "Europejska wersja notowań Intel (Xetra). Producent procesorów i rozwiązań IT.",
 
-            # --- FINANCE ---
+            # FINANCE USA & DE
             "JPM": "Największy bank w USA, oferujący pełen zakres usług finansowych i inwestycyjnych.",
+            "JPM.DE": "Europejska wersja notowań JPMorgan (Xetra). Globalny lider bankowości inwestycyjnej.",
             "BAC": "Drugi co do wielkości bank komercyjny w USA, kluczowy podmiot bankowości detalicznej.",
+            "BAC.DE": "Europejska wersja notowań Bank of America (Xetra). Gigant bankowości detalicznej.",
             "V": "Globalny lider płatności elektronicznych, obsługujący infrastrukturę transakcji kartowych.",
-            "MA": "Międzynarodowy operator systemu płatności cyfrowych.",
-            "GS": "Wiodący bank inwestycyjny, specjalizujący się w zarządzaniu aktywami i doradztwie.",
-            "C": "Globalna instytucja finansowa świadcząca usługi bankowości korporacyjnej i detalicznej.",
-            "PYPL": "Pionier płatności cyfrowych i transferów online, posiadający szerokie portfolio fintech.",
-            "AXP": "Dostawca kart płatniczych i usług finansowych dla segmentu premium.",
-            "WFC": "Jeden z największych banków w USA, z silną pozycją w kredytach hipotecznych.",
+            "V3A.DE": "Europejska wersja notowań Visa (Xetra). Globalny operator płatności bezgotówkowych.",
+            "MA": "Międzynarodowy operator systemu płatności cyfrowych i kartowych.",
+            "MND.DE": "Europejska wersja notowań Mastercard (Xetra). Lider przetwarzania transakcji finansowych.",
 
-            # --- CONSUMER & PHARMA ---
-            "KO": "Największy producent napojów bezalkoholowych, król stabilnych dywidend.",
-            "PEP": "Globalny gigant branży spożywczej (napoje i przekąski).",
-            "MCD": "Największa sieć restauracji fast-food, działająca w modelu franczyzowym.",
-            "JNJ": "Zdywersyfikowany koncern farmaceutyczny i medyczny, lider innowacji medycznych.",
-            "PFE": "Globalny koncern farmaceutyczny, kluczowy gracz w badaniach nad nowymi lekami.",
-            "MRNA": "Lider innowacyjnej biotechnologii opartej na technologii mRNA.",
+            # CONSUMER & OTHERS
+            "KO": "Największy producent napojów bezalkoholowych, słynący z potężnych dywidend.",
+            "CCC3.DE": "Europejska wersja notowań Coca-Cola (Xetra). Lider branży napojów.",
+            "PEP": "Globalny gigant branży spożywczej (napoje i przekąski), posiadający silny portfel marek.",
+            "PEP.DE": "Europejska wersja notowań PepsiCo (Xetra). Gigant branży spożywczej.",
+            "MCD": "Największa na świecie sieć restauracji fast-food, działająca w modelu franczyzowym.",
+            "MCD.DE": "Europejska wersja notowań McDonald's (Xetra). Lider rynku gastronomicznego.",
             "PG": "Gigant dóbr konsumpcyjnych (kosmetyki, higiena), jedna z najbardziej stabilnych spółek.",
+            "PGH.DE": "Europejska wersja notowań Procter & Gamble (Xetra). Lider dóbr codziennego użytku.",
             "DIS": "Ikona światowej rozrywki: studio filmowe, parki rozrywki i streaming.",
-            "SBUX": "Największa na świecie sieć kawiarni, lider rynku kawy premium.",
+            "WDI.DE": "Europejska wersja notowań Disney (Xetra). Globalny gigant rozrywki.",
 
-            # --- GPW (POLSKA) ---
+            # POLSKA (GPW)
             "CDR.WA": "Największe polskie studio gier wideo, znane z globalnych hitów AAA.",
-            "PKN.WA": "Multienergetyczny gigant, lider w branży paliwowej i energetycznej w regionie.",
+            "2CD.DE": "Wersja notowań CD Projekt na giełdzie w Niemczech.",
+            "PKN.WA": "Koncern multienergetyczny, lider w branży paliwowej i energetycznej w regionie.",
+            "PKN.DE": "Wersja notowań Orlen na giełdzie w Niemczech.",
             "PKO.WA": "Największy bank detaliczny w Polsce, fundament krajowego sektora finansowego.",
+            "PKO.DE": "Wersja notowań PKO BP na giełdzie w Niemczech.",
             "PZU.WA": "Lider rynku ubezpieczeniowego w Polsce z portfelem inwestycyjnym.",
+            "PZU.DE": "Wersja notowań PZU na giełdzie w Niemczech.",
             "ALE.WA": "Największa platforma e-commerce w Polsce, kluczowy gracz handlu cyfrowego.",
-            "PEO.WA": "Jeden z największych banków komercyjnych w Polsce, część sektora bankowego.",
-            "KGH.WA": "Globalny producent miedzi i srebra, kluczowy podmiot dla polskiego eksportu.",
-            "LPP.WA": "Największa polska firma odzieżowa, zarządzająca markami takimi jak Reserved.",
-            "PGE.WA": "Największy wytwórca energii elektrycznej w Polsce, w trakcie transformacji energetycznej.",
-            "SPL.WA": "Bank świadczący pełen zakres usług finansowych dla klientów w Polsce.",
+            "ALE.DE": "Wersja notowań Allegro na giełdzie w Niemczech.",
+            "DNP.WA": "Polska sieć supermarketów, lider w sektorze handlu detalicznego.",
+            "DNP.DE": "Wersja notowań Dino Polska na giełdzie w Niemczech.",
 
-            # --- ETFS ---
-            "SPY": "ETF odzwierciedlający wyniki indeksu S&P 500 (500 największych spółek USA).",
+            # ETFS
+            "SPY": "Fundusz ETF odzwierciedlający wyniki indeksu S&P 500 (500 największych spółek USA).",
+            "EUNL.DE": "Europejski fundusz śledzący rynek światowy (MSCI World).",
             "QQQ": "Fundusz ETF inwestujący w 100 największych spółek z indeksu Nasdaq.",
+            "EQQQ.DE": "Europejska wersja ETF śledzącego indeks Nasdaq 100.",
             "GLD": "Instrument dający ekspozycję na cenę fizycznego złota.",
+            "GOLD.DE": "Europejska wersja ETF na złoto notowana na Xetra.",
             "XLE": "Fundusz skupiony na sektorze energetycznym (ropa i gaz).",
             "XLV": "Ekspozycja na sektor opieki zdrowotnej (farmacja i urządzenia medyczne).",
             "VNQ": "Fundusz inwestujący w fundusze typu REIT (nieruchomości).",
@@ -178,6 +186,7 @@ class FinancialEngine:
             "XLC": "ETF skupiony na mediach, rozrywce i usługach komunikacji internetowej.",
             "ETFW20L.WA": "Beta ETF WIG20TR, śledzący indeks 20 największych spółek na GPW."
         }
+        
     def infer_currency(self, ticker: str) -> str:
         ticker_upper = ticker.upper()
         if ticker_upper.endswith(".WA"):
