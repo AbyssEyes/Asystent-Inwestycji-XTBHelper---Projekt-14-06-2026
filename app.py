@@ -1,3 +1,9 @@
+"""
+Projekt: Asystent-Inwestycji-XTBHelper---Projekt-14-06-2026
+Przedmiot: Programowanie w językach skryptowych - laboratorium
+Rok akademicki: 2025/2026 - LATO
+"""
+
 import streamlit as st
 import yfinance as yf
 import pandas as pd
