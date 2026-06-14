@@ -104,6 +104,8 @@ class FinancialEngine:
             "biotech": ("IBB", "Biotech", "IBB.DE", "Biotech", [])
         }
 
+        self.ai_profiles = {k: f"Analiza fundamentalna instrumentu {v[1]} ({v[0]})" for k, v in self.market_map.items()}
+
     def infer_currency(self, ticker: str) -> str:
         ticker_upper = ticker.upper()
         if ticker_upper.endswith(".WA"):
