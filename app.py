@@ -160,7 +160,7 @@ class FinancialEngine:
             "2CD.DE": "Wersja notowań CD Projekt na giełdzie w Niemczech.",
             "PKN.WA": "Koncern multienergetyczny, lider w branży paliwowej i energetycznej w regionie.",
             "PKN.DE": "Wersja notowań Orlen na giełdzie w Niemczech.",
-            "PKO.WA": "Największy bank detaliczny w Polsce, fundament krajowego sektora finansowego.",
+            "PKO.WA": "Największy bank detaliczny w充olsce, fundament krajowego sektora finansowego.",
             "PKO.DE": "Wersja notowań PKO BP na giełdzie w Niemczech.",
             "PZU.WA": "Lider rynku ubezpieczeniowego w Polsce z portfelem inwestycyjnym.",
             "PZU.DE": "Wersja notowań PZU na giełdzie w Niemczech.",
@@ -363,6 +363,7 @@ st.markdown("""
     }
     .stDataFrame { border-radius: 8px; }
     h1, h2, h3, h4 { color: var(--text-color) !important; }
+    
     .ai-box {
         background-color: var(--secondary-background-color);
         border-left: 4px solid var(--primary-color);
@@ -370,9 +371,13 @@ st.markdown("""
         border-radius: 8px;
         margin-top: 14px;
         margin-bottom: 14px;
+        color: var(--text-color) !important;
+    }
+    .ai-box div, .ai-box b, .ai-box p, .ai-box span {
+        color: var(--text-color) !important;
     }
     .ai-header {
-        color: var(--primary-color);
+        color: var(--primary-color) !important;
         font-weight: 600;
         font-size: 1rem;
         margin-bottom: 8px;
@@ -501,7 +506,7 @@ with tab2:
             st.markdown(f"""
 <div class="ai-box">
     <div class="ai-header">Raport analityczny</div>
-    <div style="color: {text_color}; font-size: 0.95rem; line-height: 1.6;">
+    <div style="font-size: 0.95rem; line-height: 1.6;">
         {ai_text}
     </div>
 </div>
@@ -618,7 +623,7 @@ with tab3:
                 st.markdown(f"""
 <div class="ai-box">
     <div class="ai-header">Raport porównawczy</div>
-    <div style="color: {text_color}; font-size: 0.95rem; line-height: 1.6;">
+    <div style="font-size: 0.95rem; line-height: 1.6;">
 {ai_compare_text}
     </div>
 </div>
@@ -791,7 +796,7 @@ with tab4:
                         st.markdown(f"""
 <div class="ai-box">
     <div class="ai-header">Podsumowanie symulacji</div>
-    <div style="color: {text_color}; font-size: 0.95rem; line-height: 1.6;">
+    <div style="font-size: 0.95rem; line-height: 1.6;">
         {ai_sim_text}
     </div>
 </div>
@@ -820,7 +825,7 @@ with tab4:
                         ax_sim2.set_facecolor(secondary_background_color)
                         ax_sim2.plot(x_idx, result_df["Stopa zwrotu netto %"], color=primary_color, linewidth=1.8)
                         ax_sim2.axhline(0, color=muted_text_color, linestyle='--', linewidth=1)
-                        ax_sim2.set_title("Dynamika stopy zwrotu netto (%)", color=text_color, fontsize=11)
+                        ax_sim2.set_title("Dynamika stopo zwrotu netto (%)", color=text_color, fontsize=11)
                         ax_sim2.tick_params(colors=muted_text_color, labelsize=9)
                         ax_sim2.set_xticks(tick_positions)
                         ax_sim2.set_xticklabels(tick_labels, rotation=20)
